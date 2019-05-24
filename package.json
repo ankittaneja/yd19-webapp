@@ -1,0 +1,23 @@
+{
+  "name": "node_cloudmqtt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-ejs": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "mqtt": "^2.18.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
