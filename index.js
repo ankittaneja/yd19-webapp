@@ -7,9 +7,9 @@ const url = require('url');
 const Router = require('koa-router');
 
 const app = module.exports = new Koa();
-
 const router = new Router();
 
+// Koa related stuff. 
 app.use(bodyParser());
 render(app, {
   root: path.join(__dirname, 'views'),
@@ -21,6 +21,7 @@ render(app, {
 
 // All MQTT stuff begins here. Parse URL to get params
 var mqtt_url = url.parse(process.env.CLOUDMQTT_URL || 'mqtt://ntqxchaq:qcs-8ry6gnWw@m23.cloudmqtt.com:12004');
+mqtt_url = mqtt_url.replace('-01', '');
 var auth = (mqtt_url.auth || ':').split(':');
 
 // Create a client connection
@@ -31,16 +32,19 @@ var client = mqtt.connect(mqtt_url, {
   password: auth[1]
 });
 
+client.stream.on('error', function (error) {
+  // This does trigger when the URL is invalid
+  console.error('Connection error:', error);
+});
 client.on('connect', function() { // When connected
-
+  console.log('here');
   // subscribe to a topic
   client.subscribe('hello/world', function() {
     // when a message arrives, do something with it
     client.on('message', function(topic, message, packet) {
       console.log("Received '" + message + "' on '" + topic + "'");
     });
-  });
-
+  }); 
   // publish a message to a topic
   client.publish('hello/world', 'This is Sparta', function() {
     console.log("Message is published");
