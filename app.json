@@ -1,7 +1,10 @@
 {
   "name": "YD IoT Workshop",
   "description": "Koa Webapp for YeurDreamin 19 IoT Workshop",
+  "website": "https://www.yeurdreamin.eu",
+  "success_url": "/",
   "repository": "https://github.com/ankittaneja/yd19-webapp",
   "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "addons": ["cloudmqtt:cat"],
   "keywords": ["node", "koa", "yeurdreamin", "iot", "mqtt"]
 }
