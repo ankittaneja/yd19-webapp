@@ -1,0 +1,7 @@
+{
+  "name": "YD IoT Workshop",
+  "description": "Koa Webapp for YeurDreamin 19 IoT Workshop",
+  "repository": "https://github.com/ankittaneja/yd19-webapp",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "koa", "yeurdreamin", "iot", "mqtt"]
+}
