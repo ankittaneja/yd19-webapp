@@ -33,11 +33,10 @@ var client = mqtt.connect(mqtt_url, {
 });
 
 client.stream.on('error', function (error) {
-  // This does trigger when the URL is invalid
   console.error('Connection error:', error);
 });
-client.on('connect', function() { // When connected
-  
+
+client.on('connect', function() { // When connected  
   // subscribe to a topic
   client.subscribe('hello/world', function() {
     // when a message arrives, do something with it
@@ -52,6 +51,7 @@ client.on('connect', function() { // When connected
   });
 });
 
+// Home Route
 router.get('/', async ctx => {
   await ctx.render('index', {
     mqttDetails: mqtt_url,
@@ -59,13 +59,18 @@ router.get('/', async ctx => {
   });
 });
 
-router.get('/send', async (ctx,next) => {
+//Download Route (for the workshop)
+router.get('/iot', async ctx => {
+  await ctx.render('iot');
+})
 
+// Ping Route
+router.get('/send', async (ctx,next) => {
   // publish a message to a topic
-  client.publish('hello/world', 'This is Koa', function() {
+  client.publish('hello/world', 'This is YeurDreamin', function() {
     console.log("Message is published");
-  //  client.end(); // Close the connection when published
   });
+  // Stay on Page
   ctx.status = 204;  
 });
 
