@@ -1,14 +1,14 @@
 {
-  "name": "node_cloudmqtt",
+  "name": "koa_mqtt",
   "version": "1.0.0",
-  "description": "",
+  "description": "A koa app running MQTT client helper",
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["koa", "iot", "yeurdreamin"],
+  "author": "Ankit Taneja",
   "license": "ISC",
   "dependencies": {
     "koa": "^2.7.0",
