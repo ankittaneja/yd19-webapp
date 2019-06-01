@@ -33,7 +33,7 @@ var client = mqtt.connect(mqtt_url, {
 });
 
 client.stream.on('error', function (error) {
-  console.error('Connection error:', error);
+//  console.error('Connection error:', error);
 });
 
 client.on('connect', function() { // When connected  
