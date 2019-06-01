@@ -21,7 +21,7 @@ render(app, {
 
 // All MQTT stuff begins here. Parse URL to get params
 var mqtt_url = url.parse(process.env.CLOUDMQTT_URL || 'mqtt://ntqxchaq:qcs-8ry6gnWw@m23.cloudmqtt.com:12004');
-console.log(mqtt_url);
+//console.log(mqtt_url);
 var auth = (mqtt_url.auth || ':').split(':');
 
 // Create a client connection
@@ -33,7 +33,7 @@ var client = mqtt.connect(mqtt_url, {
 });
 
 client.stream.on('error', function (error) {
-//  console.error('Connection error:', error);
+  console.error('Connection error:', error);
 });
 
 client.on('connect', function() { // When connected  
