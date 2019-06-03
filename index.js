@@ -6,6 +6,8 @@ const mqtt = require('mqtt');
 const url = require('url');
 const Router = require('koa-router');
 
+const helper = require('./helpers/sfdx');
+
 const app = module.exports = new Koa();
 const router = new Router();
 
@@ -77,4 +79,6 @@ router.get('/send', async (ctx,next) => {
 const PORT = process.env.PORT || 5001;
 app.use(router.routes());
 app.use(router.allowedMethods());
+app.use(helper.routes());
+app.use(helper.allowedMethods());
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

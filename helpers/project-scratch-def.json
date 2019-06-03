@@ -1,0 +1,15 @@
+{
+  "orgName": "YeurDreamin",
+  "edition": "Developer",
+  "features": ["IOT", "ServiceCloud", "AuthorApex", "API","Communities"],
+  "settings": {
+      "orgPreferenceSettings": {
+          "networksEnabled": true,
+          "s1DesktopEnabled": true,
+          "s1EncryptedStoragePref2": false
+      },
+      "caseSettings": {
+          "systemUserEmail": "support@yd19.com"
+      }
+  }
+}
