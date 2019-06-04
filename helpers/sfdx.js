@@ -20,7 +20,10 @@ router.get('/create', (ctx) => {
     .then( () => {
       // Successfully Scratch org Created
       console.log('Scratch org created');
-      sfdx.org.open('-u mytest');
+      sfdx.org.open('-u mytest')
+      .then(() => {
+        console.log('Opened');
+      });
     })
     .catch((error) => {
       // Promise rejected in case of conflicts or some other issue while pulling from scratch org
