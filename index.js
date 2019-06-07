@@ -39,17 +39,19 @@ client.stream.on('error', function (error) {
 });
 
 client.on('connect', function() { // When connected  
-  // subscribe to a topic
-  client.subscribe('hello/world', function() {
-    // when a message arrives, do something with it
-    client.on('message', function(topic, message, packet) {
-      console.log("Received '" + message + "' on '" + topic + "'");
-    });
+  // subscribe to host topic to listen 
+  client.subscribe('bonjour/host', function() { 
   }); 
   // publish a message to a topic
-  client.publish('hello/world', 'This is Sparta', function() {
+  client.publish('hallo/amsterdam', 'This is Sparta!!!', function() {
     console.log("Message is published");
   //  client.end(); // Close the connection when published
+  }); 
+  client.on('message', function(topic, message, packet) {
+    //console.log("Received '" + message + "' on '" + topic + "'");
+    if(topic == 'bonjour/host'){
+      console.log("Received '" + message + "' on '" + topic + "'");
+    }
   });
 });
 
@@ -69,7 +71,7 @@ router.get('/iot', async ctx => {
 // Ping Route
 router.get('/send', async (ctx,next) => {
   // publish a message to a topic
-  client.publish('hello/world', 'This is YeurDreamin', function() {
+  client.publish('hallo/amsterdam', 'This is YeurDreamin!!!', function() {
     console.log("Message is published");
   });
   // Stay on Page
