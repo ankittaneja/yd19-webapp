@@ -57,15 +57,15 @@ client.on('connect', function() { // When connected
 
 // Home Route
 router.get('/', async ctx => {
-  await ctx.render('index', {
-    mqttDetails: mqtt_url,
-    userDetails: auth
-  });
+  await ctx.render('index');
 });
 
 //Download Route (for the workshop)
-router.get('/iot', async ctx => {
-  await ctx.render('iot');
+router.get('/mqtt', async ctx => {
+  await ctx.render('mqtt', {
+    mqttDetails: mqtt_url,
+    userDetails: auth
+  });
 })
 
 // Ping Route
