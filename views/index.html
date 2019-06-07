@@ -1,8 +1,61 @@
-<ul class="collection with-header">
-  <li class="collection-header"><h4>Here are your MQTT server details</h4></li>
-  <li class="collection-item">Server: <%= mqttDetails.hostname %></li>
-  <li class="collection-item">Port: <%= mqttDetails.port %></li>
-  <li class="collection-item">Username: <%= userDetails[0] %></li>
-  <li class="collection-item">Password: <%= userDetails[1] %></li>
-</ul>
 
+<style>
+  .center {
+    text-align: center;
+  }
+</style>
+<h4 class="center">Download links & setup instructions for IoT Workshop</h4>
+<ul class="collapsible popout">
+<li>
+  <div class="collapsible-header"><i class="material-icons">laptop</i>Arduino IDE setup</div>
+  <div class="collapsible-body">
+    <span>
+      <ol id="ide">
+        <li>Goto <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE downloads</a> page and install the approriate version.</li>
+        <li>In order to connect to our ESP32 module via USB port, we need extra drivers / boards. Check out the following blog articles for respective OS'<div class=""></div>
+          <ol type="a" start="a">
+            <li><a href="https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-mac-and-linux-instructions/" target="_blank">Mac / Linux</a> users. (Note: You many need to install <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" target="_blank">ESP32 CP210x USB to UART Bridge VCP Drivers</a>. It's mentioned in the blog but can be easily overlooked hence writing here.)</li></li>
+            <li><a href="https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/" target="_blank">Windows</a></li>
+          </ol>
+        <li>We would need to install additional libraries in order for our code to execute properly. Checkout <a href="https://www.arduino.cc/en/Guide/Libraries" target="_blank">this link</a> to learn more about it. Please download and install the following libraries. </li>
+          <ol type="a" start="a">
+            <li>PubSub Client</li>
+            <li>Arduino Json</li>
+          </ol>
+      </ol>
+    </span>
+  </div>
+</li>
+<li>
+  <div class="collapsible-header"><i class="material-icons">filter_drama</i>Salesforce setup</div>
+  <div class="collapsible-body">
+    <span>
+      <ol id="managedpack">
+        <li>We need a Developer Edition org. Since Salesforce has disabled IoT cloud by default, we need a Scratch Org. You can download the ScractOrg definition file <a href="" target="_blank">here.</a></li>
+        <!-- <li>Please <a href="" target="_blank">download</a> and install the managed package. (NOTE: If you do the IoT trail in this Dev org you won't need to install the package)</li> -->
+        <li>Please create a Connected App in the Scratch Org. We would need the client_id to register our device.</li>
+      </ol>
+    </span>
+  </div>
+</li>  
+<li>
+  <div class="collapsible-header"><i class="material-icons">code</i>Sample Code</div>
+  <div class="collapsible-body">
+    <span>
+      <ol id="sketches">
+        <li>Goto the <a href="https://github.com/ankittaneja/yd19-sketches" target="_blank">YD19-Sketches</a> repo and please download the sketches.</li>
+        <li>Please goto the <a href="https://github.com/ankittaneja/yd19-webapp" target="_blank">YD19-Webapp</a> repo & click the 
+          <a href="">
+            <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+          </a> button in order to deploy the supporting webapp.</li>
+      </ol>
+    </span>
+  </div>
+</li>
+</ul>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems, {});
+});
+</script>
