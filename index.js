@@ -6,8 +6,6 @@ const mqtt = require('mqtt');
 const url = require('url');
 const Router = require('koa-router');
 
-const helper = require('./helpers/sfdx');
-
 const app = module.exports = new Koa();
 const router = new Router();
 
@@ -78,9 +76,17 @@ router.get('/send', async (ctx,next) => {
   ctx.status = 204;  
 });
 
+router.post('/send', async (ctx,next) => {
+  // publish a message to a topic
+  client.publish('hallo/amsterdam', 'This is YeurDreamin!!!', function() {
+    console.log("Message is published");
+  });
+  ctx.status = 200;
+  ctx.message = 'Post Successful';
+
+});
+
 const PORT = process.env.PORT || 5001;
 app.use(router.routes());
 app.use(router.allowedMethods());
-app.use(helper.routes());
-app.use(helper.allowedMethods());
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
