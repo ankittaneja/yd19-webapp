@@ -3,8 +3,11 @@
   .center {
     text-align: center;
   }
+  strong { 
+    font-weight: 700;
+  }
 </style>
-<h4 class="center">Download links & setup instructions for IoT Workshop</h4>
+<h4 class="center">Download links & Setup instructions for IoT Workshop</h4>
 <br />
 <ul class="collapsible popout">
   <li class="active">
@@ -14,7 +17,7 @@
         
         <ol id="requireList">
           <li>Arduino IDE installed and configured to connect devices with USB</li>
-          <li>Connected Developer Edition Salesforce Org</li>
+          <li>Developer Edition Salesforce Org</li>
           <li>A Heroku App with MQTT server as we need it communicate with the ESP32 module.</li>
             <!-- <li>Developer Edition Org with <strong>DevHub enabled</strong>. If possible, create a ScratchOrg with the definition file provided here.</li> -->
             <!-- <li>A Heroku account with space for atleast 1 free app. We need an MQTT server to communicate with the ESP32 module. Luckily, Heroku provides one for free. You can deploy an exact version of this very web app using <a href="https://heroku.com/deploy?template=https://github.com/ankittaneja/yd19-webapp">
@@ -54,7 +57,7 @@
       <ol id="managedpack">
         <li>We need a Developer Edition org with <strong>DevHub enabled</strong>. Since Salesforce has disabled IoT cloud by default, we need a Scratch Org. You can download the ScractOrg definition file <a href="https://github.com/ankittaneja/yd19-sketches/blob/master/yd19-scratch-def.json" target="_blank">here.</a></li>
         <!-- <li>Please <a href="" target="_blank">download</a> and install the managed package. (NOTE: If you do the IoT trail in this Dev org you won't need to install the package)</li> -->
-        <li>Please create a Connected App in the Scratch Org. We would need the client_id to register our device.</li>
+        <li>Please create a Connected App in the Scratch Org with <strong>OAuth and Device Flow Enabled</strong>. We would need the client_id to register our device.</li>
       </ol>
     </span>
   </div>
