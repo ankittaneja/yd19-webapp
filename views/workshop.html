@@ -1,0 +1,86 @@
+<style>
+  strong {
+    font-weight: 700;
+  }
+</style>
+<h3>YeurDreamin’ Workshop Steps</h3>
+<ul class="collapsible popout">
+  <li>
+    <div class="collapsible-header"><i class="material-icons">info_outline</i>Hello World! Blink OnBoard LED</div>
+    <div class="collapsible-body">
+        <ol type="1" start="1">
+          <li>Open Arduino IDE. Connect the ESP32 via USB.</li>
+          <li>Open the LED_BlinkTest Sketch. Upload it to the board.</li>
+          <li>Blue LED should be blinking</li>
+        </ol>
+    </div>
+</li> 
+<li>
+  <div class="collapsible-header"><i class="material-icons">info_outline</i>Blink OnBoard LED via Salesforce</div>
+  <div class="collapsible-body">
+    <ol type="1" start="1">
+      <li>Open the developer org.</li>
+      <li>Open your copy of Heroku app. Goto the MQTT section</li>
+      <li>Setup a remote site for https://<strong>”yourappname”</strong>.heroku.com</li>
+      <li>Open the CloudMqttClient Sketch.</li>
+      <li>Enter the following details in Sketch from your Heroku app.</li>
+      <ol type="a" start="a">
+        <li>SSID</li>
+        <li>password</li>
+        <li>mqttServer</li>
+        <li>mqttPort</li>
+        <li>mqttUser</li>
+        <li>mqttPassword</li>
+      </ol>  
+      <li>Open Developer Console. Open Execute Anonymous.</li>
+      <li>Paste the following Code:</li>
+          
+      <li>Execute. The LED shoulds blink one after the other for every execute.</li>
+      <li>To ensure it's working, you can also use the Ping button on your individual wed app. (You might need to reset / restart 2-3 times to register the module on server)</li>
+    </ol>
+  </div>
+</li>
+<li>
+  <div class="collapsible-header"><i class="material-icons">info_outline</i>Create a Case in Salesforce via ESP32</div>
+  <div class="collapsible-body">
+      <ol type="1" start="1">
+    <li>Make a new folder, call it yd19. Change working directory to the newly created folder.</li>
+    <li>sfdx force:auth:web:login --setdefaultdevhubusername --setalias yd19hub (Give the above dev org credentials when asked)</li>
+    <li>Download the scratch org definition file from https://github.com/ankittaneja/yd19-sketches/blob/master/yd19-scratch-def.json</li>
+    <li>sfdx force:org:create -f yd19-scratch-def.json --setdefaultusername --setalias yd19</li>
+    <li>sfdx force:org:list ( to ensure we have set the default scratch org correctly)</li>
+    <li>sfdx force:user:password:generate</li>
+    <li>sfdx force:user:display -u yd19</li>
+    <li>sfdx force:org:open -u yd19</li>
+    <li>Enable IoT. (Search for IoT in Quick Find and click Enable)</li>
+    
+    <li>Create a connected App and note Client secret</li>
+    <ol type="a" start="a">
+      <li>Please check Enable OAuth Setting</li>
+      <li>Please check Enable Device Flow</li>
+      <li>Please give API permission (Access and manage your data (api))</li>
+    </ol>
+    <li>Create Platform event</li>
+    <ol type="a" start="a">
+      <li>Create a field called Serial No.(Type:Text, Length:255, Required.)</li>
+      <li>Create a field called Touch Value(Number 3 digit)</li>
+      <!-- <li>Make other optional fields.</li> -->
+    </ol>
+    <li>Create Asset Field</li>
+    <ol type="a" start="a">
+        <li>Create a field called Asset Serial No.(Type:Text, Length:255, Unique.)</li>
+        <li>Create a field called Max Touch Value(Number 3 digit)</li>
+    </ol>
+    <li>Create a new Asset record. Note the Asset Serial Number. (Give it 1001 for simplicity)</li>
+    <li>Create Context & Orchestration</li>
+    <li>Download the MakePostToSalesforce Sketch</li>
+    <li>Change the <strong>clientid</strong> in the Sketch to one in your connected app.</li>
+    <li>Open https://test.salesforce.come/setup/connect</li>
+    <li>Upload the code to the device. Open debugger.</li>
+    <li>Copy the User Code from from Arduino IDE debugger into the link above.</li>
+    <li>Click Connect and Approve the device.</li>
+    <li>Connect the Cable to D4 pin on the board.</li>
+    <li>Check if the Case is created.</li>
+  </div>  
+</li>
+</ul>

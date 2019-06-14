@@ -11,25 +11,24 @@
 <br />
 <ul class="collapsible popout">
   <li class="active">
-      <div class="collapsible-header"><i class="material-icons">info_outline</i>Requirements</div>
-      <div class="collapsible-body">
-        <span>In order for this workshop to be successful, we need the following things and few setup configurations.</span><br /><br />
-        
-        <ol id="requireList">
-          <li>Arduino IDE installed and configured to connect devices with USB</li>
-          <li>Developer Edition Salesforce Org</li>
-          <li>A Heroku App with MQTT server as we need it communicate with the ESP32 module.</li>
-          <li>A Micro-USB 2.0 cable to connect to the module. (Any phone charging cable apart from iPhone)</li> 
-        </ol>
-        <br />      
-        Please go through each tab as it has detailed  information on setup. If you face any problem, don't hesitate to contact me.  
-        <a href="https://twitter.com/intent/tweet?screen_name=NktTaneja&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @NktTanjea</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>  
+    <div class="collapsible-header"><i class="material-icons">info_outline</i>Requirements</div>
+    <div class="collapsible-body">
+      <span>In order for this workshop to be successful, we need the following things and few setup configurations.</span><br /><br />
+      
+      <ol id="requireList">
+        <li>Arduino IDE installed and configured to connect devices with USB</li>
+        <li>Developer Edition Salesforce Org</li>
+        <li>A Heroku App with MQTT server as we need it communicate with the ESP32 module.</li>
+        <li>A Micro-USB 2.0 cable to connect to the module. (Any phone charging cable apart from iPhone)</li> 
+      </ol>
+      <br />      
+      Please go through each tab as it has detailed  information on setup. If you face any problem, don't hesitate to contact me.  
+      <a href="https://twitter.com/intent/tweet?screen_name=NktTaneja&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @NktTanjea</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>  
   </li>
   <li>
     <div class="collapsible-header"><i class="material-icons">laptop</i>Arduino IDE setup</div>
     <div class="collapsible-body">
-      <span>
         <ol id="ide">
           <li>Goto <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE downloads</a> page and install the approriate version.</li>
           <li>In order to connect to our ESP32 module via USB port, we need extra drivers / boards. Check out the following blog articles for respective OS'<div class=""></div>
@@ -43,25 +42,21 @@
               <li>Arduino Json</li>
             </ol>
         </ol>
-      </span>
     </div>
   </li>
   <li>
   <div class="collapsible-header"><i class="material-icons">filter_drama</i>Salesforce setup</div>
   <div class="collapsible-body">
-    <span>
       <ol id="managedpack">
         <li>We need a Developer Edition org with <strong>DevHub enabled</strong>. Since Salesforce has disabled IoT cloud by default, we need a Scratch Org. You can download the ScractOrg definition file <a href="https://github.com/ankittaneja/yd19-sketches/blob/master/yd19-scratch-def.json" target="_blank">here.</a></li>
         <!-- <li>Please <a href="" target="_blank">download</a> and install the managed package. (NOTE: If you do the IoT trail in this Dev org you won't need to install the package)</li> -->
         <li>Please create a Connected App in the Scratch Org with <strong>OAuth and Device Flow Enabled</strong>. We would need the client_id to register our device.</li>
       </ol>
-    </span>
   </div>
 </li>  
 <li>
   <div class="collapsible-header"><i class="material-icons">code</i>Heroku App + Sample Code</div>
   <div class="collapsible-body">
-    <span>
       <ol id="sketches">
         <li>Please click the 
           <a href="https://heroku.com/deploy?template=https://github.com/ankittaneja/yd19-webapp">
@@ -69,7 +64,6 @@
           </a> button in order to deploy a copy of this supporting webapp. It starts a cloudMQtt server for you. Alternatively, you can also fork <a href="https://github.com/ankittaneja/yd19-webapp" target="_blank">this repo</a> and do it yourself.</li>
           <li>Goto the <a href="https://github.com/ankittaneja/yd19-sketches" target="_blank">YD19-Sketches</a> repo and please download the sketches.</li>  
       </ol>
-    </span>
   </div>
 </li>
 </ul>

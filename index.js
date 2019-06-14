@@ -66,6 +66,11 @@ router.get('/mqtt', async ctx => {
   });
 })
 
+//Workshop steps to do
+router.get('/workshop', async ctx => {
+  await ctx.render('workshop');
+})
+
 // Ping Route
 router.get('/send', async (ctx,next) => {
   // publish a message to a topic
