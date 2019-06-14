@@ -6,7 +6,7 @@
 <h3>YeurDreamin’ Workshop Steps</h3>
 <ul class="collapsible popout">
   <li>
-    <div class="collapsible-header"><i class="material-icons">info_outline</i>Hello World! Blink OnBoard LED</div>
+    <div class="collapsible-header"><i class="material-icons">power_settings_new</i>Hello World! Blink OnBoard LED</div>
     <div class="collapsible-body">
         <ol type="1" start="1">
           <li>Open Arduino IDE. Connect the ESP32 via USB.</li>
@@ -16,7 +16,7 @@
     </div>
 </li> 
 <li>
-  <div class="collapsible-header"><i class="material-icons">info_outline</i>Blink OnBoard LED via Salesforce</div>
+  <div class="collapsible-header"><i class="material-icons">all_inclusive</i>Blink OnBoard LED via Salesforce</div>
   <div class="collapsible-body">
     <ol type="1" start="1">
       <li>Open the developer org.</li>
@@ -34,14 +34,20 @@
       </ol>  
       <li>Open Developer Console. Open Execute Anonymous.</li>
       <li>Paste the following Code:</li>
-          
+      <br />
+        HttpRequest req = new HttpRequest(); <br />
+        req.setEndpoint('https://yd19.herokuapp.com/send'); <br />
+        req.setMethod('GET'); <br />
+        Http http = new Http(); <br />
+        HTTPResponse res = http.send(req); <br />
+        <br />  
       <li>Execute. The LED shoulds blink one after the other for every execute.</li>
       <li>To ensure it's working, you can also use the Ping button on your individual wed app. (You might need to reset / restart 2-3 times to register the module on server)</li>
     </ol>
   </div>
 </li>
 <li>
-  <div class="collapsible-header"><i class="material-icons">info_outline</i>Create a Case in Salesforce via ESP32</div>
+  <div class="collapsible-header"><i class="material-icons">filter_drama</i>Create a Case in Salesforce via ESP32</div>
   <div class="collapsible-body">
       <ol type="1" start="1">
     <li>Make a new folder, call it yd19. Change working directory to the newly created folder.</li>
