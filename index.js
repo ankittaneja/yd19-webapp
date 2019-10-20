@@ -86,7 +86,7 @@ router.post('/send', async (ctx,next) => {
   client.publish('hallo/amsterdam', 'This is YeurDreamin!!!', function() {
     console.log('Message is published2');
   });
-  ctx.status = 200;
+  ctx.status = 201;
   ctx.message = 'Post Successful';
 
 });
